@@ -3,33 +3,56 @@ public class Zoo {
     String name;
     String city;
     int nbrCages;
-         if(nbrCages <=0 &&nbrCages <=25) {
-        this.nbrCages = nbrCages;
-    } else
+    int nbrAnimal = 0;
 
-    {
-        System.out.println("le zoo comporte 25 animeaux .");
-    }
-     public Zoo(String name, String city, int 25 ){
+
+    public Zoo(String name, String city, int nbrCages) {
         this.name = name;
         this.city = city;
-        this.animals = new Animal[25];
-        this.nbrCages = 25;
+        animals = new Animal[nbrCages];
+        this.nbrCages = nbrCages;
     }
-         //Methode add display
-    public void dispalayZoo(String name,String city,int nbrCages){
+
+    //Methode add display
+    public void dispalayZoo() {
         System.out.println("Nom du zoo : " + name);
         System.out.println("Ville du zoo : " + city);
         System.out.println("Nombre de cages : " + nbrCages);
     }
-         //Methode addanimal
+
+
+    public String toString() {
+        return " zoo name " + name + " \ncity " + city + " \nbrcages " + nbrCages;
+    }
+
     public boolean addAnimal(Animal animal) {
-        if (nbrCages < animals) {
-            animals[nbrCages] = animal;
-            nbrCages++;
+        if (nbrAnimal < animals.length) {
+            animals[nbrAnimal] = animal;
+            nbrAnimal++;
             return true;
         } else {
-
             return false;
         }
+    }
+
+    public void dispalayAnimal() {
+        for (int i = 0; i < nbrAnimal; i++) {
+            animals[i].displayAnimal();
+            System.out.println();//traj3ek l star illli baaadou
+        }
+    }
+
+    public int searchanimal(Animal animal) {
+        for (int i = 0; i < nbrAnimal; i++) {
+            if (animals[i].namee.equals(animal.namee)) {
+                return i;
+
+            }
+        }
+        return -1;
+    }
+
+
 }
+
+

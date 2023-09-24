@@ -1,23 +1,26 @@
 public class Animal {
      String family;
-     String name;
-     Integer age;
+     String namee;
+     int age;
      boolean isMammal;
 
      // Création d'un  constructeur paramétré
-
-     Animal(String family, String name, int age, boolean isMammal){
+     public Animal(String family, String namee, int age, boolean isMammal){
           this.family = family;
-          this.name = name;
+          this.namee = namee;
           this.age = age;
           this.isMammal = isMammal;
      }
 
 
-     public void displayAnimal(String family,String name,int age){
-          System.out.println("family");
-          System.out.println("name");
-          System.out.println("age");
+     public void displayAnimal(){
+          System.out.println("family"+family);
+          System.out.println("name"+namee);
+          System.out.println("age"+age);
 
+
+     }
+     public String toString(){
+          return " family " +family +  " \nname "+namee +" \nage "+age;
      }
 }
